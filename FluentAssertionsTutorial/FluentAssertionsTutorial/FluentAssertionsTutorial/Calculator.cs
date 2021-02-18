@@ -1,6 +1,6 @@
 using System;
 
-namespace xUnitTutorial
+namespace FluentAssertionsTutorial
 {
     public class Calculator
     {
@@ -8,7 +8,7 @@ namespace xUnitTutorial
         
         public decimal Value { get; private set; } = 0;
 
-        public string Text => $"The result is {Value}";
+        public string Text => $"The result is: {Value}";
 
         public decimal Add(decimal value)
         {
@@ -45,15 +45,15 @@ namespace xUnitTutorial
                 return Value = value;
             }
 
-            if (Value != 0 && value == 0)
+            /*if (Value != 0 && value == 0)
             {
                 throw new ArgumentException("Can't divide by 0");    
-            }
+            }*/
 
             return Value /= value;
         }
     }
-
+    
     internal enum CalculatorState
     {
         Cleared,
